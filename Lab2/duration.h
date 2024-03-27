@@ -30,8 +30,6 @@ class Duration{
 
         void text();
 
-//        void read();
-
         int compare(Duration other);
 
         void convert(string ch);

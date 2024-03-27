@@ -2,7 +2,6 @@
 // Created by raulm on 3/6/2024.
 //
 #include <iostream>
-//#include "duration.h"
 #include "assert.h"
 #include <vector>
 #include "duration.h"
@@ -65,7 +64,6 @@ int main(){
     assert(test_divide(d1,5.0).get_value()==1.0);
     assert(test_compare(d1,d2)==1);
     assert(test_convert(d3,"s").get_value()==180.0 && test_convert(d3,"s").get_unit()=="s");
-//    assert(test_text(d1)==" ");
     int nr;
     vector<Duration> vec;
     cout<<"Wie viele objekte mochten sie machen: ";
@@ -95,38 +93,38 @@ int main(){
                     "6.Ein Zeitdauer umwandeln \n "
                     "7.Die Liste von Zeitadauer anzeigen \n "
                     "8.Exit" << '\n';
-            int ch;
-            cin >> ch;
+            int cho;
+            cin >> cho;
             int i = 0, j = 0;
-            if (ch == 1) {
+            if (cho == 1) {
                 cout << "Welche zwei wollen sie addieren: ";
                 cin >> i >> j;
                 vec.push_back(vec[i].add(vec[j]));
                 vec[vec.size()-1].text();
-            } else if (ch == 2) {
+            } else if (cho == 2) {
                 cout << "Welche zwei wollen sie subtrahieren: ";
                 cin >> i >> j;
                 vec.push_back(vec[i].substract(vec[j]));
                 vec[vec.size()-1].text();
-            } else if (ch == 3) {
+            } else if (cho == 3) {
                 cout << "Weclhes Zeitdauer und Zahl wollen sie wahlen: ";
                 cin >> i;
                 double n = 0.0;
                 cin >> n;
                 vec[i].scale(n);
                 vec[i].text();
-            } else if (ch == 4) {
+            } else if (cho == 4) {
                 cout << "Weclhes Zeitdauer und Zahl wollen sie wahlen: ";
                 cin >> i;
                 double n = 0.0;
                 cin >> n;
                 vec[i].divide(n);
                 vec[i].text();
-            } else if (ch == 5) {
+            } else if (cho == 5) {
                 cout << "Welche zwei Zeitdauer wollen sie wahlen: ";
                 cin >> i >> j;
                 cout << vec[i].compare(vec[j]) << '\n';
-            } else if (ch == 6) {
+            } else if (cho == 6) {
                 cout << "Welches Zeitdauer wollen sie umwandeln: ";
                 cin >> i;
                 string ch;
@@ -134,11 +132,11 @@ int main(){
                 cin>>ch;
                 vec[i].convert(ch);
                 vec[i].text();
-            } else if (ch == 7) {
+            } else if (cho == 7) {
                 for (int k = 0; k < vec.size(); k++) {
                     vec[k].text();
                 }
-            } else if (ch == 8) {
+            } else if (cho == 8) {
                 break;
             }
         }
